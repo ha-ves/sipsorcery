@@ -807,9 +807,9 @@ namespace SIPSorcery.Net
             }
         }
 
-        private IceTcpReceiver_ GetIceTcpReceiver(Socket tcpSocket, bool isrelay = false)
+        private IceTcpReceiver GetIceTcpReceiver(Socket tcpSocket, bool isrelay = false)
         {
-            var rtpTcpReceiver = new IceTcpReceiver_(tcpSocket);
+            var rtpTcpReceiver = new IceTcpReceiver(tcpSocket);
 
             rtpTcpReceiver.OnPacketReceived +=
                 (_, localPort, remoteEndPoint, packet) =>
